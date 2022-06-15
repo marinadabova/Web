@@ -1,0 +1,52 @@
+body {
+    width: 370px;
+    text-align: center;
+    font-family: Arial;
+    border: 1.5px solid #659952;
+    background-color: #defdf1;
+    padding-top: 25px;
+    padding-bottom:25px;
+    display:block;
+    
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-inline: auto;
+}
+
+.usname, .passwd, .ph, .em, .numb{
+    width: 300px;
+    height: 28px;
+    margin:1px;
+    border: 2px solid #cdd6cb;
+    margin-bottom: 10px;
+    text-indent: 5px;
+
+}
+
+.usname:hover, .passwd:hover, .ph:hover, .em:hover, .numb:hover{
+    border:2px solid #79a06b;
+}
+.group{
+    width: 308px;
+    height: 35px;
+    border: 2px solid #cdd6cb;
+    margin-bottom: 10px;
+    text-indent: 5px;
+
+}
+.group:hover{
+    border:2px solid #79a06b;
+}
+.button{
+    width: 308px;
+    height: 35px;
+    background-color: #cfe7d9;
+    color: #78a769;
+    border:2px solid #bbc9ba;
+    cursor: pointer;
+}
+.button:hover{
+    background-color:#558d3d;
+    color: #bfe3c2;
+    
+}

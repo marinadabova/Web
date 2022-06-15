@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Тема 19: Инструменти за стрес-тестове на уеб приложения</title>
+        <link href="./19ref.css" rel="stylesheet" />
+        <script src="./javascript/19ref.js" defer></script>
+        <script src="https://kit.fontawesome.com/ef0d3af2ae.js" crossorigin="anonymous"></script>
+
+
+    </head>
+    <body>
+        <header>
+            <h1 id="header"> Инструменти за стрес-тестове на уеб приложения</h1>
+        </header>
+       
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-angle-up"></i></button>
+    
+        <section class="navbar">
+            <section class="first">
+                <a href="#webTest">Какво е тестване на уеб приложения? </a>  
+            </section>
+
+            <section class="dropdown">
+              <button class="dropbtn">Тестване на производителността 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <section class="dropdown-content">
+          
+                <a href="#loadTest" >Какво е тестване на натоварването (Load testing)? </a>
+                <a href="#stressTest" >Какво е стрес тестване (Stress testing)? </a>
+              </section>
+            </section> 
+          
+            <section class="dropdown">
+              <button class="dropbtn"> Инструменти за стрес тестване на уеб приложения
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <section class="dropdown-content">
+                <a href="#ninja">LoadNinja </a> 
+                <a href="#smartmeter">SmartMeter </a>
+                <a href="#jmeter">Apahe JMeter </a>
+                <a href="#neoload">NeoLoad</a>
+              </section>
+            </section>
+           
+            <section class="nav-concl">
+                <a href="#conclusion">  Заключение</a>
+            </section>
+            
+            <section class="dropdown">
+              <button class="dropbtn2">Списък с цитирана литература
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <section class="dropdown-content">
+                <a href="#text-citation">Текстово съдържание</a>
+                <a  href="#img-citation">Фигури</a>
+              </section>
+            </section>
+          </section>
+
+            
+          
+        <section class="main">
+            <h2 id="webTest">Какво е тестване на уеб приложения?</h2>
+            <p>Уеб тестването е проверка на уеб приложението за потенциални повреди и дефекти преди да се пусне в употреба и да е достъпно от потребителите.
+                В зависимост от изискванията за уеб тестване, могат да се извършват следните видове/техники тестване:
+            </p>
+            <ul>
+                <li> Тестване на функционалността</li>
+                <li> Тестване на използваемостта</li>
+                <li> Тестване на интерфейса</li>
+                <li> Тестване на базата данни</li>
+                <li> Тестване на съвместимостта</li>
+                <li> Тестване на производителността</li>
+                <li> Тестване на сигурността</li>
+                <li> Тестване от реални потребители <a class="links" href="#link1">[1]</a></li>
+            </ul>
+            <figure id="img-WebTestTypes">
+                <img src="./img/WebTestTypes.png" alt="Types testing" />
+                <figcaption>Фигура 1. Видове/техники уеб тестване
+                </figcaption>
+            </figure>
+            <p>А сега ще разгледаме по-подробно тестването на производителността, тъй като точно там се крие и същността на темата.</p>
+        </section>
+        <section class="main">
+            <h2 id="perfTest"> Тестването на производителността </h2>
+            <p> Тестването на производителността гарантира работата на уеб приложението при всякакви натоварвания. Има няколко вида методи за тестване, които могат да се използват за определяне на производителността- тестване за издръжливост(Soak testing), спайк тестване(Spike testing), тестване за мащабируемост(Scalability testing ), тестване на капацитет(Capacity testing) и двата по-основни и разпространени метода- тестване на натоварването (Load testing) и стрес тестване (Stress testing), които ще разгледаме малко по-подробно. 
+                <a class="links" href="#link2">[2]</a>
+            </p>
+            <figure id="img-PerformanceTesting" >
+                <img src="./img/img-PerformanceTesting.jpg" alt="Performance Testing"/>
+                <figcaption>Фигура 2. Тестване на производителността </figcaption>
+            </figure>
+        </section>
+
+        <section class="main">
+            <h3 id="loadTest">Какво е тестване на натоварването (Load testing)? </h3>
+            <p>Тестване на натоварването (Load testing) е нефункционален процес на тестване на софтуера, който помага на разработчиците да разберат поведението на системата при конкретна стойност на натоварване. При процеса на тестване на натоварването се симулира реалното натоварване като измерванията се извършват при нормални и тежки натоварвания. Този вид тестване спогама за установяването на бройката потребители, които могат да използват приложението. Тестването на натоварването се извършва към края на разработването на проекта. 
+                <a class="links" href="#link3">[3]</a>
+            </p>
+            <figure id="img-LoadTesting">
+                <img src="./img/LoadTesting.png" alt="Load Testing"/>
+                <figcaption> Фигура 3. Тестване на натоварването (Load testing)</figcaption>
+            </figure>
+        </section>
+
+        <section class="main">
+            <h3 id="stressTest">Какво е стрес тестване (Stress testing)?</h3>
+            <p>Стрес тестването (Stress testing) е процес на тестване, който подлага софтуерната система на условия на екстремно натоварване. Тези условия спомагат проверката на нейната стабилност, устойчивост, поведение при обработка на грешки и възстановяване. По такъв начин се проверява системата, че тя да достигне своята точка на пречупване.</p>
+            <p>Стрес тестовете позволяват на софтуерните екипи да разберат мащабируемостта на работното натоварване. Те натоварват хардуерните ресурси като процесори, памет, твърди дискове и статични дискови устройства, като по този начин се определя потенциалната точка на прекъсване на приложението спрямо тези ресурси.</p>
+            <p>Освен това този процес на тестване също може да покаже колко време е необходимо на ключовите показатели за ефективност (KPI-Key Performance Indicator) да се върнат към нормалните си оперативни нива след някакво събитие.
+                <a class="links" href="#link4">[4]</a>
+            </p>
+            <p>Стрес тестването може да се изпълни преди или след като системата се пусне в употреба. То може да се изпълни и преди определени големи събития (например Черен петък), когато трафика на потребители е много голям. 
+                <a class="links" href="#link2">[5]</a>
+            </p>
+            
+            <figure id="img-StressTesting">
+                <img src="./img/StressTesting.jpg" alt="Stress Testing"/>
+                <figcaption> Фигура 4. Стрес тестване (Stress Testing)</figcaption>
+            </figure>
+        </section class="main">
+
+        <section class="main">
+            <h2 id="tools"> Инструменти за стрес тестване на уеб приложения</h2>
+            <ol>
+             <!-- First tool for stress testing -->
+               <li id="ninja"> <h3 id="ninja"> LoadNinja</h3></li>
+                <figure id="img-LoadNinja">
+                    <img id="ldIMG" src="./img/Logo-LoadNinja.png" alt="Logo LoadNinja"/>
+                    <figcaption> Фигура 5. Лого LoadNinja </figcaption>
+                </figure>
+                <p><b>Сайт:</b> <a href="https://loadninja.com/"  target="_blank">https://loadninja.com/</a></p>
+                <p><b>Цена:</b> От 119.92$ месечно</p>
+                <p>LoadNinja е един от популярните инструменти за тестване на производителността на уеб приложения. Разработен е от SmartBear и е базиран на облак платформа.
+                    Той помага на разработчиците, QA екипите и инжерените по производителност да проверяват дали уеб сървърите издържат екстремно натоварване и дали са стабилни и мащабируеми.
+                    <a class="links" href="#link5">[6]</a>
+                </p>
+                <p>LoadNinja позволява на потребителите да разработват тестове без код, които намаляват до 50% времето за тестване. Освен това замества емулаторите на натоварване с действителни браузъри като по този начин постига скорост на нинджа с високи показатели за действие, базирани на браузър. LoadNinja съхранява взаимодействията на клиента, отстранява грешки в реално време и открива грешки в производителността.
+                    <a class="links" href="#link6">[7]</a>
+                </p>
+                <p>LoadNinja помага с отговора на следните въпроси: </p>
+                <ul>
+                    <li> Колко потребителя могат да работят с моето уеб приложение без осезаемо забавяне на системата? </li>
+                    <li> Какво натоварване може да срине системата? </li>
+                    <li> Как времето за реакция се променя при увеличаване на натоварването?</li>
+                    <li> Как промените в хардуера и софтуера се отразява на производителността на сървъра?
+                        <a class="links" href="#link5">[8]</a>
+                    </li>              
+                </ul>
+                <h4>Тестване с LoadNinja</h4>
+                <h5>UI тествове</h5>
+                <p>UI тестовете или скриптовете са последователност от индивидуални потребителски действия в тестваното уеб приложение. Те тестват уеб приложението като възпроизвеждат действията на потребителите като щраквания с мишката или въвеждане на данни на тествани уеб страници и др. Тези тестове симулират реални потребители, работещи с уеб страници.</p>
+                <ul>
+                <li>
+                    Създаване на UI тест
+                    <p>За да се създаде UI тест, трябва да се запишат реалните действия на потребителя в тестваното уеб приложение. Един проект може да съдържа произволен брой UI тестове.</p>
+                    <figure id="img-UITest-LoadNinja">
+                        <img src="./img/UITest-LoadNinja.png" alt="UI Test with LoadNinja"/>
+                        <figcaption> Фигура 6. Създаване на UI тест </figcaption>
+                    </figure>
+                </li>
+               <li>
+                    Как да видим тестовете?
+                    <p>За да видите тестовете на потребителския интерфейс на вашия проект, отидете на Проекти, изберете проекта от списъка и превключете към раздела Тестове.
+                        <a class="links" href="#link7">[9]</a>
+                    </p>
+                    <figure id="img-UIList-LoadNinja">
+                        <img src="./img/List-LoadNinja.png" alt="UI List of Tests- LoadNinja"/>
+                        <figcaption> Фигура 7. Списък с тестове </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    Редактиране на тестове
+                    <figure id="img-UIEditor-LoadNinja">
+                        <img src="./img/UIEditor-LoadNinja.png" alt="UI Edit Test- LoadNinja"/>
+                        <figcaption> Фигура 8. Редактиране на тест </figcaption>
+                    </figure>
+                </li>
+                </ul>
+                <h5>API тестове </h5>
+                <p>API тестът е поредица от заявки за API. Обикновено отговаря на последователността от API повиквания, които клиентското приложение изпраща към уеб услуга. API тестовете симулират извиквания на API методи на тествания уеб сървър.
+                    <a class="links" href="#link8">[10]</a>
+                </p>
+                <ul>
+                <li>
+                    Създаване на API тест
+                    <figure id="img-APITest-LoadNinja">
+                        <img src="./img/APITest-LoadNinja.png" alt="API Create Test- LoadNinja"/>
+                        <figcaption> Фигура 9. Създаване на API тест </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    Как да видим тестовете?
+                    <figure id="img-APIList-LoadNinja">
+                        <img src="./img/List-LoadNinja.png" alt="API List of Tests- LoadNinja"/>
+                        <figcaption> Фигура 10. Списък с тестове</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    Редактиране на тестове
+                    <figure id="img-APIEditor-LoadNinja">
+                        <img src="./img/APIEditor-LoadNinja.png" alt="API Edit Test- LoadNinja"/>
+                        <figcaption> Фигура 11. Редактиране на тест</figcaption>
+                    </figure>
+                </li>
+                </ul>
+                <p>Тестването с LoadNinja по-подробно на следния линк:
+                    <a href="https://www.youtube.com/watch?v=p1CNzH0gqZM" target="_blank">https://www.youtube.com/watch?v=p1CNzH0gqZM</a>
+                </p>
+            <!-- Second tool for stress testing -->
+
+                <li id="smartmeter"><h3 id="smartmeter"> SmartMeter</h3> </li>
+                
+                <figure id="img-SmartMeter">
+                    <img id="smIMG" src="./img/SmartMeter.png" alt="Logo SmartMeter"/>
+                    <figcaption>Фигура 12. Лого SmartMeter</figcaption>
+                </figure>
+                <p><b>Сайт:</b> <a href="https://www.smartmeter.io"  target="_blank">https://www.smartmeter.io</a></p>
+                <p><b>Цена:</b> 39$ месечно</p>
+                <p>SmartMeter е инструмент за стрес тестване, който се използва за създаването на прост тест, който може да се имплементира в много тестови ситуации без писане на код. Предимно е графичен потребителски интерфейс, който няма необходими плъгини и прокси сървър настройки. Той изтегля автоматично генерирани документи с цялата информация за теста.
+                    <a class="links" href="#link6">[11]</a>
+                </p>
+                <h4>Характеристики</h4>
+                <p>SmartMeter предлага следните функционалности:</p>
+                <ul>
+                    <li>Мониторинг на тестовата среда</li>
+                    <li>Създават се лесно тестови сценарии, чрез вградения вътрешен браузър.</li>
+                    <li>Може да се комбинира със Селениум (SELENIUM).</li>
+                    <li>Резултати от тестове в реално време на няколко монитора</li>
+                    <li> DYNATRACE APM интеграция</li>
+                    <li>Автоматично архивиране на резултатите и тестовите сценарии</li>
+                    <li>Лесно споделяне на тестовете, данните от тестовете и самият инструмент</li>
+                    <li>Поддръжка на конвертиране на автоматични функционални тестове в тестове на производителността</li>
+                    <li>Автоматични актуализации <a class="links" href="#link9">[12]</a></li>
+                </ul>
+                <h4>Работа със SmartMeter</h4>
+                <ul>
+                    <li>Създаване на тест
+                        <p>Първата стъпка в създаването на тест е записването на тестов сценарий</p>
+                        <figure id="img-CreateTest-SmartMeter">
+                            <img src="./img/CreateTest-SmartMeter.jpg" alt="Create Test with SmartMeter"/>
+                            <figcaption>Фигура 13. Създаване на тест със SmartMeter, записване на сценарий</figcaption>
+                        </figure>
+                        <figure id="img-EditTest-SmartMeter">
+                            <img src="./img/EditTest-SmartMeter.jpg" alt="Edit Test with SmartMeter"/>
+                            <figcaption>Фигура 14. Редактиране на сценари</figcaption>
+                        </figure>
+                    </li>
+                    <li>Пробно изпълнение
+                        <figure id="img-StartTest-SmartMeter">
+                            <img src="./img/StartTest-SmartMeter.jpg" alt="Start Test with SmartMeter"/>
+                            <figcaption>Фигура 15. Стартиране на тест</figcaption>
+                        </figure>
+                    </li>
+                    <li>Отчитане на теста
+                        <figure id="img-Report-SmartMeter">
+                            <img src="./img/Report-SmartMeter.png" alt="Generate Report with SmartMeter"/>
+                            <figcaption>Фигура 16. Създаване на отчет</figcaption>
+                        </figure>
+                    </li> 
+                </ul>
+                <p>Стрес тестване с SmartMeter може да видите по-подробно на:
+                    <a href="https://www.youtube.com/watch?v=M2uqCJlhiiA" target="_blank">https://www.youtube.com/watch?v=M2uqCJlhiiA</a>
+                </p>
+            <!-- Third tool for stress testing -->
+
+               <li id="jmeter"> <h3 id="jmeter"> Apache JMeter </h3> </li>
+                
+                <figure id="img-ApacheJMeter">
+                    <img id="jmIMG" src="./img/ApacheJMeter.png" alt="Logo Apache JMeter"/>
+                    <figcaption> Фигура 17. Лого Apache JMeter</figcaption>
+                </figure>
+                <p><b>Сайт:</b> <a href="https://jmeter.apache.org" target="_blank">https://jmeter.apache.org</a></p>
+                <p><b>Цена:</b> безплатно</p>
+
+                <p>Приложението Apache JMeter™ е софтуер с отворен код, разработено изцяло на Java, предназначено за измерване на производителността. Първоначално е проектиран за тестване на уеб приложения, но след това се разшири до други тестови функции.
+                    <a class="links" href="#link6">[13]</a>
+                </p>
+                <h4>Характеристики на JMeter</h4>
+                <p>JMeter не е браузър,а работи на ниво протокол. Той изглежда като браузър (или по-скоро множество браузъри), що се отнася до уеб услугите и отдалечените услуги, инструментът обаче не изпълнява всички действия, поддържани от браузърите– не изпълнява Javascript, не изобразява HTML страниците, както го прави браузърът.
+                    <a class="links" href="#link10">[14]</a>
+                </p>
+                <p>Този инструмент поддържа удобен за потребителя GUI, който е интерактивен и ясен. Той е независим, тъй като е проектиран с помощта на JAVA и може да работи на всяка платформа, която приема JVM като Window, Mac и Linux и т.н.
+                    <a class="links" href="#link11">[15]</a>
+                </p>
+                <h4>Предимства на JMeter</h4>
+                <ul>
+                    <li>Инструментът е безплатен. Той е с отворен код и нулеви разходи за лицензиране.</li>
+                    <li>Може да зарежда тестове за различни видове приложения – уеб приложения, уеб услуги, бази данни, LDAP, шел скриптове и др.</li>
+                    <li>JMeter предлага функция за запис и възпроизвеждане, чрез които се правят по-лесно и бързо тестовите скриптове.</li>
+                    <li>Предлага възможност за персонализиране според специфичните изисквания на разработчиците.</li>
+                    <li>Има много онлайн уроци, свободно достъпни плъгини, които помагат в различни аспекти на създаването и анализа на скриптове.</li>
+                </ul>
+                <h4>Недостатъци на JMeter</h4>
+                <ul>
+                    <li>Липсва функция за мрежова визуализация</li>
+                    <li>Скриптовете в JMeter изискват известно ниво на опит и разбиране на различни елементи на тестовия план, регулярни изрази, обработка на сесии и т.н.</li>
+                    <li>Не поддържа ajax, javascript и flash</li>
+                    <li>Не изобразява уеб елементи</li>
+                    <li>В сравнение с други инструменти за стрес тестване, редоставя много ограничени възможности за наблюдение на тестове в реално време.
+                        <a class="links" href="#link12">[16]</a>
+                    </li>
+                </ul>
+                <h4>Елементи на JMeter</h4>
+                <p>Различните компоненти на JMeter се наричат елементи. Те имат специфични цели. Най-главните елементи са:</p>
+                <ul>
+                    <li>Група от нишки (Thread Group)
+                        <p>Групата от нишки (Thread Group) е колекция от нишки като всяка нишка представлява един потребител, използващ тестваното приложение. Той симулира една реална потребителска заявка към сървъра. </p>
+                        <figure id="img-ThreadGroup-JMeter">
+                            <img src="./img/ThreadGroup-JMeter.png" alt="Thread Group -JMeter"/>
+                            <figcaption> Фигура 18. Thread Group</figcaption>
+                        </figure>
+                    </li>
+                    <li>Samplers
+                        <p>Sampler-ите помагат на Групата от нишки(Thread Group) да знае кой тип заявки (HTTP, FTP и т.н.) трябва да направи</p>
+                        <figure id="img-Samplers-JMeter">
+                            <img src="./img/Samplers-JMeter.png" alt="Sapmplers -JMeter"/>
+                            <figcaption> Фигура 19. Samplers</figcaption>
+                        </figure>
+                    </li>
+                    <li>Listeners
+                        <p>Listeners(бг. Превод слушателите) показват резултатите от изпълнението на теста. Те могат да показват резултати в различен формат, като например дърво, таблица, графика или регистрационен файл.</p>
+                        <figure id="img-Listener-JMeter">
+                            <img src="./img/Listener-JMeter.png" alt="Listeners -JMeter"/>
+                            <figcaption> Фигура 20. Listeners</figcaption>
+                        </figure>
+                    </li>
+                    <li>Configuration
+                        <p>Конфигурационните елементи(Configuration elements) се използват за настройка на стойности по подразбиране и променливи за по-късно използване от Sampler-и. 
+                            <a class="links" href="#link13">[17]</a>
+                        </p>
+                        <figure id="img-Configuration-JMeter">
+                            <img src="./img/Configuration-JMeter.png" alt="Configuration -JMeter"/>
+                            <figcaption>Фигура 21. Configuration</figcaption>
+                        </figure>
+                    </li>
+
+                </ul>
+                <p>Тестване с JMeter може да видите на следния линк:
+                <a href="https://youtu.be/O61k_Wz0gW0" target="_blank">https://youtu.be/O61k_Wz0gW0</a>
+                </p>
+            <!-- Forth tool for stress testing -->
+
+              <li id="neoload"> <h3 id="neoload"> NeoLoad </h3> </li>
+                
+                <figure id="img-NeoLoad">
+                    <img id="nlIMG" src="./img/NeoLoad.png" alt="Logo NeoLoad"/>
+                    <figcaption> Фигура 22. Лого NeoLoad</figcaption>
+                </figure>
+                <p><b>Сайт:</b><a href="https://www.neotys.com"  target="_blank"> https://www.neotys.com/</a></p>
+                <p><b>Цена:</b> 20000$ за година</p>
+
+                <p>NeoLoad е инструмент, който се използва за провеждане на стрес тестове на всички уеб-базирани приложения и други мобилни приложения. Разработен е от Neotys.</p>
+                <h4>Характеристики на NeoLoad</h4>
+                <ul>
+                    <li>Може да бъде внедрен във всички видове сървъри.</li>
+                    <li>С него могат да се извършват стрес тестове на приложения за бизнес разузнаване ERP и CRM и др.
+                        <a class="links" href="#link6">[18]</a>
+                    </li>
+                    <li>NeoLoad е по-бърз стрес тест инстуремент в сравение с останалите традиционни инструменти </li>
+                    <li>Поддържа различни рамки и протоколи като HTTP/2, HTML5, API, AngularJS, Web Socket, SOAP и др.</li>
+                    <li>Има дизайн без код</li>
+                    <li>Променя функционалните тестови скриптове в скриптове за тестване на производителността</li>
+                    <li>Автоматично обновява тестовите скриптове</li>
+                    <li>Генерира резултати от тестовете в реално време
+                        <a class="links" href="#link11">[19]</a>
+                    </li>
+                    <li>Повторно използване на функционални тестове за производителност</li>
+                    <li>Разширена корелация </li>
+                    <li>API тестване
+                        <a class="links" href="#link14">[20]</a>
+                    </li>
+                </ul>
+                <h4>Работа с NeoLoad</h4>
+                <p>След като е създаден проект инструментът изглежда по този начин:</p>
+                <figure id="img-Work-NeoLoad">
+                    <img src="./img/Work-NeoLoad.jpg" alt="NeoLoad"/>
+                    <figcaption>Фигура 23. NeoLoad </figcaption>
+                </figure>
+                <p>Neoload съдържа 3 компонента под една секция:</p>
+                <ul>
+                    <li>Дизайн (Design)
+                        <p>Използва се за дизайн на скриптове. Съдържа 3 секции:</p>
+                        <ul>
+                            <li>User Paths – запис и подобряване на скриптовете.</li>
+                            <li>Populations – добавяне на скриптове към сценария.</li>
+                            <li>Monitors – добавяне на сървъри за наблюдение.</li>
+                        </ul>
+                    </li>
+                    <li>Време за изпълнение (Runtime)
+                        <p>Използва се за създаване на сценарии</p>
+                    </li>
+                    <li>Резултати (Results)
+                        <p>Стартиране на тест и генериране на отчет.
+                            <a class="links" href="#link21">[21]</a>
+                        </p>
+                    </li>                   
+                </ul>
+                <p>Стрес тестване с инструмента NeoLoad може да видите като посетите:
+                    <a href="https://www.youtube.com/watch?v=7UuhZaIpCz4" target="_blank">https://www.youtube.com/watch?v=7UuhZaIpCz4</a>
+                </p>
+            </ol>
+        </section>
+        <section class="main">
+            <h2 id="conclusion">Заключение </h2>
+            <p>Нека обобщим на кратко най-важните неща за стрес тестването като си отговорим на следния въпрос: "Защо да използваме стрес тестване?"</p>
+            <p>Стрес тестването е важен тест на производителността на едно система, тъй като спомага за идентифицирането на няколко параметъра:</p>
+            <ul>
+                <li>Спомага за намиране на точката на пречупване на системата и това от своя страна помага да се определи нормалния обхват на натоварване.</li>
+                <li>Проверява поведението на системата и производителността ѝ повреме и след неуспехи и повреди. </li>
+                <li>Проверява съобщенията за грешки, които излизат при неуспех. </li>
+                <li> Проверява се и базата данни преди и след неуспех на системата при екстремно натоварване.</li>
+                <li>Възстановяването на системата след неуспехи е сигурно, благодарение на стрес тестването. </li>
+                <li>Стрес тестването потвърждава, че системата работи спрямо спецификациите дори при екстремни условия. 
+                    <a class="links" href="#link4">[22]</a> 
+                </li>
+            </ul>
+        </section>
+        <section class="main">
+            <h2 id="citation">Списък с цитирана литература</h2>
+
+            <section class="links"> 
+                <h3 id="text-citation">Текстово съдържание</h3>
+                
+                <p id="link1">[1] Thomas Hamilton, “Web Application Testing: 8 Step Guide to Website Testing“, публикуван 2022-02-19,
+                    [<a href="https://www.guru99.com/web-application-testing.html"  target="_blank"> https://www.guru99.com/web-application-testing.html</a>
+                    ], последно посетен на 2022-04-10.
+                </p>
+                <p id="link2">[2],[5] Alexander S. Gillis, “performance testing“, последно променен декември,2020,
+                    [<a href="https://www.techtarget.com/searchsoftwarequality/definition/performance-testing"  target="_blank"> https://www.techtarget.com/searchsoftwarequality/definition/performance-testing</a>
+                    ], последно посетен на 2022-05-13
+                </p>
+                <p id="link3">[3]Swati Tawde, “Load Testing vs Stress Testing”,
+                    [<a href="https://www.educba.com/load-testing-vs-stress-testing/"  target="_blank">https://www.educba.com/load-testing-vs-stress-testing/</a>
+                    ], последно посетен на 2022-04-11           
+                </p>
+                <p id="link4">[4],[22] “Stress Testing”,
+                    [<a href="https://www.tutorialcup.com/testing/types-of-testing/stress-testing.htm#Introduction"  target="_blank">https://www.tutorialcup.com/testing/types-of-testing/stress-testing.htm#Introduction</a>
+                    ], последно посетен на 2022-05-13
+                </p>
+                <p id="link5">[6],[8] ”About LoadNinja”, последно променен 2021-11-11, 
+                    [<a href="https://support.smartbear.com/loadninja/docs/general-info/about.html"  target="_blank">https://support.smartbear.com/loadninja/docs/general-info/about.html</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link6">[7],[11],[13],[18] Priya Pedamkar, “Stress Testing Tools,
+                    ”[<a href="https://www.educba.com/stress-testing-tools/"  target="_blank">https://www.educba.com/stress-testing-tools/</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link7">[9] ”UI Tests (or Scripts)” , последно променен 2021-11-11,
+                    [<a href="https://support.smartbear.com/loadninja/docs/scripts/index.html"  target="_blank">https://support.smartbear.com/loadninja/docs/scripts/index.html</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link8">[10] “API Tests”, последно променен 2021-11-11, 
+                    [<a href="https://support.smartbear.com/loadninja/docs/api-tests/index.html"  target="_blank">https://support.smartbear.com/loadninja/docs/api-tests/index.html</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link9">[12] ”FEATURES”, 
+                    [<a href="https://www.smartmeter.io/features"  target="_blank">https://www.smartmeter.io/features</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link10">[14] “Apache JMeter™”,
+                    [<a href="https://jmeter.apache.org"  target="_blank">https://jmeter.apache.org</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link11">[15],[19] JavaTPoint, “Performance testing tools (Load testing tools)”,
+                    [<a href="https://www.javatpoint.com/performance-testing-tools"  target="_blank"> https://www.javatpoint.com/performance-testing-tools</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link12">[16] Kuldeep Rana, ”JMeter”,последно променен 2021-05-01,
+                    [<a href="https://artoftesting.com/what-is-jmeter"  target="_blank">https://artoftesting.com/what-is-jmeter</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link13">[17] Sayantini, ”JMeter Tutorial for Beginners : All You Need To Know About Performance Testing”,последно променен 2021-12-14, 
+                    [<a href="https://www.edureka.co/blog/jmeter-tutorial/"  target="_blank">https://www.edureka.co/blog/jmeter-tutorial/</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link14">[20] Neotys, “NeoLoad Features”,
+                    [<a href="https://www.neotys.com/neoload/features"  target="_blank">https://www.neotys.com/neoload/features</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+                <p id="link15">[21] SoftwareTestingHelp, “Neoload Tutorial: Neoload Introduction, Download And Installation”, последно променен на 2022-04-03,  
+                    [<a href="https://www.softwaretestinghelp.com/neoload-tutorial/"  target="_blank">https://www.softwaretestinghelp.com/neoload-tutorial/</a>
+                    ], последно посетен на 2022-04-13
+                </p>
+            </section>
+
+           <section>            
+               <h3 id="img-citation">Фигури</h3>
+
+               <p>“Important Web Application Automated Testing Types and Tools”, публикуван 2020-04-23, 
+                [<a href="https://www.testingxperts.com/blog/web-application-automated-testing"  target="_blank">https://www.testingxperts.com/blog/web-application-automated-testing</a>
+                ], използван за <a href="#img-WebTestTypes">Фигура 1</a>
+                </p>              
+                <p>Vishal Shah, “SOFTWARE PERFORMANCE TESTING ENSURES THE SUCCESS OF A SOFTWARE APPLICATION”, публикуван 2020-06-24, 
+                    [<a href="https://www.tatvasoft.com/blog/software-performance-testing-ensures-success-of-a-software-application/"  target="_blank">https://www.tatvasoft.com/blog/software-performance-testing-ensures-success-of-a-software-application/</a>
+                    ], използван за <a href="#img-PerformanceTesting">Фигура 2</a>
+                </p>           
+                <p>“Load Testing Service”, 
+                    [<a href="https://www.teec.co.uk/load-testing-services/"  target="_blank">https://www.teec.co.uk/load-testing-services/</a>
+                    ], използван за <a href="#img-LoadTesting">Фигура 3</a>
+                </p>
+                <p>“Performance Testing”, 
+                    [<a href="https://trackdfect.com/testing-services/performance-testing/" target="_blank">https://trackdfect.com/testing-services/performance-testing/</a>
+                    ], използван за <a href="#img-StressTesting">Фигура 4</a> 
+                </p>
+                <p> “SmartBear LoadNinja Logo Vector“, последно променен 2020-09-01, 
+                    [<a href="https://logovectorseek.com/smartbear-loadninja-logo-vector-svg/" target="_blank">https://logovectorseek.com/smartbear-loadninja-logo-vector-svg/</a>
+                    ], използван за<a href="#img-LoadNinja">Фигура 5</a> 
+                </p>
+                <p>“Record UI Test”, последно променен 2021-11-11, 
+                    [<a href="https://support.smartbear.com/loadninja/docs/tutorial/record.html" target="_blank">https://support.smartbear.com/loadninja/docs/tutorial/record.html</a>
+                    ], използван за <a href="#img-UITest-LoadNinja">Фигура 6</a>
+                </p>
+                <p>“UI Tests (or Scripts)”, последно променен 2021-11-11, 
+                    [<a href="https://support.smartbear.com/loadninja/docs/scripts/index.html" target="_blank">https://support.smartbear.com/loadninja/docs/scripts/index.html</a>
+                    ], използван за <a href="#img-UIList-LoadNinja">Фигура 7</a> и
+                     <a href="#img-UIEditor-LoadNinja"> Фигура 8</a>
+                </p>
+                <p>“Create an API Test”, последно променен 2021-11-11, 
+                    [<a href="https://support.smartbear.com/loadninja/docs/api-tests/create.html" target="_blank">https://support.smartbear.com/loadninja/docs/api-tests/create.html</a>
+                    ], използван за <a href="#img-APITest-LoadNinja">Фигура 9</a>
+                </p>
+                <p>“API Tests”, последно променен 2021-11-11, 
+                    [<a href="https://support.smartbear.com/loadninja/docs/api-tests/index.html" target="_blank">https://support.smartbear.com/loadninja/docs/api-tests/index.html</a>
+                    ], използван за <a href="#img-APIList-LoadNinja">Фигура 10</a> и
+                    <a href="#img-APIEditor-LoadNinja">Фигура 11</a> 
+                </p>
+                <p>“File:Logo black SmartMeter.io.png”, последно променен 2017-11-01,
+                    [<a href="https://commons.wikimedia.org/wiki/File:Logo_black_SmartMeter.io.png" target="_blank">https://commons.wikimedia.org/wiki/File:Logo_black_SmartMeter.io.png</a>
+                    ], използван за <a href="#img-SmartMeter">Фигура 12</a>
+                </p>
+                <p>SoftwareTestingHelp, “How To Test Website Performance Using SmartMeter.Io Tool: Hands-On Review Tutorial”,последно променен 2022-04-03,
+                     [<a href="https://www.softwaretestinghelp.com/smartmeter-io-review-tutorial/" target="_blank">https://www.softwaretestinghelp.com/smartmeter-io-review-tutorial/</a>
+                     ],използван за<a href="#img-CreateTest-SmartMeter">Фигура 13</a> ,
+                     <a href="#img-EditTest-SmartMeter">Фигура 14</a> ,
+                     <a href="#img-StartTest-SmartMeter">Фигура 15 </a> и
+                      <a href="#img-Report-SmartMeter">Фигура 16</a>
+                </p>
+                <p>BlazeMeter, 
+                    [<a href="https://www.blazemeter.com/jmeter-version-51" target="_blank">https://www.blazemeter.com/jmeter-version-51</a>
+                    ], използван за <a href="#img-ApacheJMeter">Фигура 17</a>
+                </p>
+                <p>Sayantini, ”JMeter Tutorial for Beginners : All You Need To Know About Performance Testing”,последно променен 2021-12-14,
+                     [<a href="https://www.edureka.co/blog/jmeter-tutorial/" target="_blank">https://www.edureka.co/blog/jmeter-tutorial/</a>
+                    ], използван за <a href="#img-ThreadGroup-JMeter">Фигура 18</a>, 
+                    <a href="#img-Samplers-JMeter">Фигура 19</a>, 
+                    <a href="#img-Listeners-JMeter">Фигура 20</a> и 
+                    <a href="#img-Configuration-JMeter">Фигура 21</a>
+                </p>
+                <p>Neotys, “Neotys Announces NeoLoad 5.1”, 
+                    [<a href="https://www.neotys.com/de/news-de/news-item-6182015-press-release" target="_blank">https://www.neotys.com/de/news-de/news-item-6182015-press-release</a>
+                    ], използван за <a href="#img-NeoLoad" >Фигура 22</a>
+                </p>
+                <p>SoftwareTestingHelp, “Neoload Tutorial: Neoload Introduction, Download And Installation”, последно променен на 2022-04-03, 
+                    [<a href="https://www.softwaretestinghelp.com/neoload-tutorial/" target="_blank">https://www.softwaretestinghelp.com/neoload-tutorial/</a>
+                    ],използван за <a href="#img-Work-NeoLoad"> Фигура 23</a>
+
+                </p>
+           </section>
+
+        </section>
+    </body>
+</html>
